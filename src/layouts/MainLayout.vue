@@ -1,15 +1,17 @@
 <template>
-    <v-app id="inspire">
+  <v-app id="inspire">
     <v-navigation-drawer v-model="drawer" app>
       <v-list-item>
         <v-list-item-content>
-          <v-list-item-title class="title">
-            TMS
-          </v-list-item-title>
-          <v-list-item-subtitle>
-            Меню
-          </v-list-item-subtitle>
+          <v-list-item-title class="title"> TMS </v-list-item-title>
+          <v-list-item-subtitle> Меню </v-list-item-subtitle>
         </v-list-item-content>
+        <v-switch
+          v-model="$vuetify.theme.dark"
+          inset
+          label="Тема"
+          persistent-hint
+        ></v-switch>
       </v-list-item>
 
       <v-divider></v-divider>
@@ -31,25 +33,28 @@
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
       <v-toolbar-title>
-        <img class="logoCompany" src="../../public/logo.svg" alt="logo">  
+        <img class="logoCompany" src="../../public/logo.svg" alt="logo" />
       </v-toolbar-title>
     </v-app-bar>
 
     <v-main>
-       <router-view/>
+      <router-view />
     </v-main>
   </v-app>
 </template>
 
 <script>
-
-
 export default {
   name: "Home",
   data: () => ({
     drawer: null,
     items: [
       { title: "Главная", icon: "mdi-view-dashboard", to: "/" },
+      {
+        title: "Календарь событий",
+        icon: "mdi-calendar-month-outline",
+        to: "/calendaries",
+      },
       { title: "Список заявок", icon: "mdi-table", to: "/about" },
       { title: "События", icon: "mdi-view-list", to: "/categories" },
     ],
@@ -59,7 +64,7 @@ export default {
 </script>
 
 <style>
-  .logoCompany{
-     height: 60px;
-  }
+.logoCompany {
+  height: 60px;
+}
 </style>

@@ -7,4 +7,5 @@ export default new Vuetify({
     icons: {
         iconfont: 'mdiSvg',
       },
+      // theme: { dark: true },
 });

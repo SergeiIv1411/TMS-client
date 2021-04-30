@@ -9,7 +9,6 @@ export default {
                       "Content-Type": "application/json",
                     }
                   })
-                console.log(categories);
                 return await categories.json()
             } catch (e) {
                 console.log(e);
